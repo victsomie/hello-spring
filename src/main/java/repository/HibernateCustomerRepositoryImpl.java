@@ -21,7 +21,7 @@ public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 
     public List<Customer> findAll(){
 
-        System.out.println(username);
+        System.out.println(username + ">> object type : "+ username.getClass());
 
         List<Customer> customers = new ArrayList<Customer>();
 

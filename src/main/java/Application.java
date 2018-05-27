@@ -1,4 +1,5 @@
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.CustomerService;
 import service.CustomerServiceImpl;
@@ -9,7 +10,8 @@ public class Application{
         // CustomerService service = new CustomerServiceImpl();
 
         // Initialize the application context
-        ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        //ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext   appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
         CustomerService service = appContext.getBean("customerService", CustomerService.class);
 

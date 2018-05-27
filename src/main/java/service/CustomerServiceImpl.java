@@ -12,6 +12,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     private CustomerRepository customerRepository; // = new HibernateCustomerRepositoryImpl();
 
+
+    // Empty Constructor
+    public CustomerServiceImpl(){
+
+    }
+
     // Constructor for class
     public CustomerServiceImpl(CustomerRepository customerRepository){
         this.customerRepository = customerRepository;

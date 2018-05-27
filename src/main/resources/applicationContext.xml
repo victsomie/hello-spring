@@ -4,12 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Moving configuration to be handled differently -->
+    <!-- Name: represents the name of the setter for the class-->
     <bean name="customerRepository"
           class="repository.HibernateCustomerRepositoryImpl"/>
 
     <bean name="customerService"
-          class="service.CustomerServiceImpl">
+          class="service.CustomerServiceImpl" autowire="byType">
         <!--<property name="customerRepository" ref="customerRepository"/>-->
-        <constructor-arg index="0" ref="customerRepository"/>
+        <!--<constructor-arg index="0" ref="customerRepository"/>-->
     </bean>
 </beans>

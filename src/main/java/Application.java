@@ -13,6 +13,13 @@ public class Application{
 
         // The string passed lookis for the name of the bean
         CustomerService service = appContext.getBean("customerService", CustomerService.class);
+        System.out.println(service); // Print the location of the service
+
+        CustomerService service2 = appContext.getBean("customerService", CustomerService.class);
+        System.out.println(service2); // Print the location of the service
+
+
+
 
         System.out.println("First Name: " + service.findAll().get(0).getFirstName());
         //System.out.println("FirstName >> "+ ((CustomerServiceImpl) service).findAll().get(0).getFirstName());

@@ -1,16 +1,33 @@
 package service;
 
 import model.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import repository.CustomerRepository;
 
 import java.util.List;
 
 
 // This is where the business logic resides
+@Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 
-    CustomerRepository customerRepository; // = new HibernateCustomerRepositoryImpl();
+    //@Autowired
+    private CustomerRepository customerRepository; // = new HibernateCustomerRepositoryImpl();
+
+    // Empty contructor
+    public CustomerServiceImpl(){
+    }
+
+    // Using constructor injection
+    public CustomerServiceImpl(CustomerRepository customerRepository){
+        System.out.println("We are using constructor injection");
+        this.customerRepository = customerRepository;
+    }
+
+    @Autowired
     public void setCustomerRepository(CustomerRepository customerRepository) {
+        System.out.println("We are using setter injection");
         this.customerRepository = customerRepository;
     }
 

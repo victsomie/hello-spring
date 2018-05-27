@@ -1,8 +1,6 @@
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.CustomerService;
-import service.CustomerServiceImpl;
 
 public class Application{
 
@@ -13,6 +11,7 @@ public class Application{
         //ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         ApplicationContext   appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
+        // The string passed lookis for the name of the bean
         CustomerService service = appContext.getBean("customerService", CustomerService.class);
 
         System.out.println("First Name: " + service.findAll().get(0).getFirstName());
